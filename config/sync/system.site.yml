@@ -1,0 +1,14 @@
+uuid: 3b4e37dc-4b60-4842-82f8-0645ff574913
+name: Licenta
+mail: stefan.butura@eaudeweb.ro
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
