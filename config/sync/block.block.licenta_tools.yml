@@ -1,0 +1,26 @@
+uuid: 3f010282-0c52-48f1-a318-c027b80ec2d7
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - licenta
+_core:
+  default_config_hash: kny7BF6gxgabQS4MZxC2KIj1b1mCXZBWfJVOXmQTWJ4
+id: licenta_tools
+theme: licenta
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

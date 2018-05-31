@@ -1,0 +1,19 @@
+uuid: 3048020b-30ee-41e1-a2b7-84d74cff352b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_task
+field_name: field_task
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

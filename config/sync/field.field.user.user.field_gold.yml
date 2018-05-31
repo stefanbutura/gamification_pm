@@ -1,0 +1,24 @@
+uuid: 3bd6d1a0-ca6b-493e-9940-b0d9e1be4d86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_gold
+  module:
+    - user
+id: user.user.field_gold
+field_name: field_gold
+entity_type: user
+bundle: user
+label: Gold
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,20 @@
+uuid: 24615d4c-fe6f-484d-88d9-0f51adfbfb2e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_estimated_time
+field_name: field_estimated_time
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

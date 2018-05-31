@@ -1,0 +1,28 @@
+uuid: 4e35ffa4-17a6-4808-b58a-916e1b8055c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assignee
+    - node.type.spent_time
+id: node.spent_time.field_assignee
+field_name: field_assignee
+entity_type: node
+bundle: spent_time
+label: User
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

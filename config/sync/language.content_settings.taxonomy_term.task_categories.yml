@@ -1,0 +1,16 @@
+uuid: 5f3c45f5-c09e-4a16-9f40-d674035c3306
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.task_categories
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.task_categories
+target_entity_type_id: taxonomy_term
+target_bundle: task_categories
+default_langcode: site_default
+language_alterable: false

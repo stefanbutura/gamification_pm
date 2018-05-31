@@ -1,0 +1,22 @@
+uuid: 78923565-c82d-4014-bc0c-d25241ad4d9c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - licenta
+_core:
+  default_config_hash: 49uzNu-i_ORc3XbR8OgvhrPKd2n1L8tT-Ys4k5SnFzs
+id: licenta_local_tasks
+theme: licenta
+region: header_tabs
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

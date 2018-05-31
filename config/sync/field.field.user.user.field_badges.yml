@@ -1,0 +1,29 @@
+uuid: e789d1f9-d04f-41d2-8a62-0722981879de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_badges
+    - node.type.badge
+  module:
+    - user
+id: user.user.field_badges
+field_name: field_badges
+entity_type: user
+bundle: user
+label: Badges
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      badge: badge
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

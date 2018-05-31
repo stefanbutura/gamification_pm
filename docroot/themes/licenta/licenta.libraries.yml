@@ -1,0 +1,7 @@
+global:
+  css:
+    theme:
+      assets/overrides.css: {}
+      assets/licenta.style.css: {}
+  dependencies:
+    - bulma/global

@@ -1,0 +1,16 @@
+uuid: fc83335a-309d-41f9-979f-b83c87b4a375
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.primary_titles
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.primary_titles
+target_entity_type_id: taxonomy_term
+target_bundle: primary_titles
+default_langcode: site_default
+language_alterable: false

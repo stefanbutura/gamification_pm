@@ -1,0 +1,22 @@
+uuid: 222413a1-3d40-4d18-a4da-0a6e4229f0da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.mission
+  module:
+    - text
+id: node.mission.body
+field_name: body
+entity_type: node
+bundle: mission
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,26 @@
+uuid: 48d48fad-7b4c-4a46-b10b-5fcbfa1cc58f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_experience_points
+  module:
+    - user
+id: user.user.field_experience_points
+field_name: field_experience_points
+entity_type: user
+bundle: user
+label: 'Experience points'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

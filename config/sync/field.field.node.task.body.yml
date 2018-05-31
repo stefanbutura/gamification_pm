@@ -1,0 +1,22 @@
+uuid: bf15470f-a685-4674-9c2b-ceee5fec1046
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.task
+  module:
+    - text
+id: node.task.body
+field_name: body
+entity_type: node
+bundle: task
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

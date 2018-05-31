@@ -1,0 +1,20 @@
+uuid: 1218566b-ceed-41c3-924f-d068eec15ccc
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_experience_points
+field_name: field_experience_points
+entity_type: user
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

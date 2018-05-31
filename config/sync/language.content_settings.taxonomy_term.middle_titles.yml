@@ -1,0 +1,16 @@
+uuid: 84264f28-2399-4688-ab8d-d3e92384f6f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.middle_titles
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.middle_titles
+target_entity_type_id: taxonomy_term
+target_bundle: middle_titles
+default_langcode: site_default
+language_alterable: false

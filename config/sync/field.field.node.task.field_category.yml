@@ -1,0 +1,33 @@
+uuid: 48953e42-4dfa-40ad-b969-a1b973577171
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_category
+    - node.type.task
+    - taxonomy.vocabulary.task_categories
+  content:
+    - 'taxonomy_term:task_categories:d8e7004a-fa02-4722-ae02-1d1004202672'
+id: node.task.field_category
+field_name: field_category
+entity_type: node
+bundle: task
+label: Category
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: d8e7004a-fa02-4722-ae02-1d1004202672
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      task_categories: task_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
