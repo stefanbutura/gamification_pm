@@ -1,0 +1,23 @@
+uuid: fa981fee-4113-48ea-ba21-b9af6dfc5ebb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_spent_time
+    - node.type.spent_time
+id: node.spent_time.field_spent_time
+field_name: field_spent_time
+entity_type: node
+bundle: spent_time
+label: 'Spent time'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

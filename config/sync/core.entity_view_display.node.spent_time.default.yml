@@ -1,0 +1,57 @@
+uuid: 39673090-584d-4c0f-a05b-92a067f1af42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.spent_time.body
+    - field.field.node.spent_time.field_assignee
+    - field.field.node.spent_time.field_spent_time
+    - field.field.node.spent_time.field_task
+    - node.type.spent_time
+  module:
+    - text
+    - user
+id: node.spent_time.default
+targetEntityType: node
+bundle: spent_time
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_assignee:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_spent_time:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_task:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

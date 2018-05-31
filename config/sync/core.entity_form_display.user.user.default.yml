@@ -1,8 +1,18 @@
-uuid: f63aecbf-a242-4e26-9620-e148f6f8acf3
+uuid: 463a5dc3-d716-4d69-99d5-ca135df99886
 langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_achievements
+    - field.field.user.user.field_badges
+    - field.field.user.user.field_experience_points
+    - field.field.user.user.field_gold
+    - field.field.user.user.field_level
+    - field.field.user.user.field_primary_title
+    - field.field.user.user.field_profile_achievements
+    - field.field.user.user.field_profile_badges
+    - field.field.user.user.field_secondary_title
+    - field.field.user.user.field_titles
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -21,6 +31,90 @@ content:
   contact:
     weight: 5
     region: content
+  field_achievements:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_badges:
+    weight: 8
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_experience_points:
+    weight: 9
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_gold:
+    weight: 11
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_level:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_primary_title:
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_profile_achievements:
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_profile_badges:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_secondary_title:
+    weight: 16
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_titles:
+    weight: 14
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   language:
     weight: 0
     region: content
@@ -35,4 +129,5 @@ content:
     third_party_settings: {  }
     weight: -1
     region: content
-hidden: {  }
+hidden:
+  langcode: true

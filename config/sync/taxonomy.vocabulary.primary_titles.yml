@@ -1,0 +1,9 @@
+uuid: 48dbad72-e771-4a6a-85d1-d754d654fc69
+langcode: en
+status: true
+dependencies: {  }
+name: 'Primary titles'
+vid: primary_titles
+description: ''
+hierarchy: 0
+weight: 0

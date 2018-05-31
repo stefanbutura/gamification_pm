@@ -1,0 +1,27 @@
+uuid: 09c9892d-ba3a-413d-a987-42c13f401e16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.achievement.body
+    - node.type.achievement
+  module:
+    - text
+    - user
+id: node.achievement.default
+targetEntityType: node
+bundle: achievement
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

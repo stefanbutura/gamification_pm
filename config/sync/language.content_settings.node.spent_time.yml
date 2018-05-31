@@ -1,0 +1,11 @@
+uuid: 3e15c50e-fc2c-4283-8456-0ae5758a07f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.spent_time
+id: node.spent_time
+target_entity_type_id: node
+target_bundle: spent_time
+default_langcode: site_default
+language_alterable: false

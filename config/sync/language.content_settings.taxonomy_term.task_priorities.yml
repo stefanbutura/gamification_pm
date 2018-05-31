@@ -1,0 +1,16 @@
+uuid: ce5bb3b2-d4f0-41e1-9da2-d7efaac5891f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.task_priorities
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.task_priorities
+target_entity_type_id: taxonomy_term
+target_bundle: task_priorities
+default_langcode: site_default
+language_alterable: false

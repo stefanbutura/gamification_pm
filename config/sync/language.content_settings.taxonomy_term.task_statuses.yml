@@ -1,0 +1,16 @@
+uuid: d38916e1-f435-4520-9a5e-93b6ae45972f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.task_statuses
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.task_statuses
+target_entity_type_id: taxonomy_term
+target_bundle: task_statuses
+default_langcode: site_default
+language_alterable: false
