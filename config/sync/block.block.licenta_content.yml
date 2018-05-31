@@ -1,0 +1,22 @@
+uuid: dc7c2076-439d-4994-bed1-e517cf1d4cef
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - licenta
+_core:
+  default_config_hash: m6Lr7L9lzf7lzRJLKK9TNdy8bcgEgd_V1zIFwQtxjzQ
+id: licenta_content
+theme: licenta
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

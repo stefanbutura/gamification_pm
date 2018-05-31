@@ -1,0 +1,29 @@
+uuid: 9660496b-03e2-4b63-83df-6a592b068892
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_followed_people
+  module:
+    - user
+id: user.user.field_followed_people
+field_name: field_followed_people
+entity_type: user
+bundle: user
+label: 'Followed people'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

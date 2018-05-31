@@ -1,0 +1,22 @@
+uuid: 259051c5-bbac-4f78-b5eb-a2003b0af978
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - licenta
+_core:
+  default_config_hash: Y1EPvTI1acx8iYhkp9d4gZG9CPtaFmzDM986X5VCxSE
+id: licenta_search
+theme: licenta
+region: header_search
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: '0'
+visibility: {  }

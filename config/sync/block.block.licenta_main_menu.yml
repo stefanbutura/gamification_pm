@@ -1,0 +1,26 @@
+uuid: 6b11c329-2a0b-4bb0-93d9-0bb50eceec8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - licenta
+_core:
+  default_config_hash: 9UPcA1e4f4VzI1_HkmVE92zcA46Z4z0oUocVxNkJ9HA
+id: licenta_main_menu
+theme: licenta
+region: primary_menu
+weight: 1
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

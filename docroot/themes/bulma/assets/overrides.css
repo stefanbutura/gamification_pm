@@ -1,0 +1,37 @@
+.vertical-tabs .vertical-tabs__panes {
+  padding: 1rem; }
+  .vertical-tabs .vertical-tabs__panes .vertical-tabs__pane {
+    padding-right: 1rem; }
+  .vertical-tabs .vertical-tabs__panes .panel .panel-block {
+    border: 0; }
+  .vertical-tabs .vertical-tabs__panes .control {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+
+@media screen and (max-width: 768px) {
+  #header .nav-menu.nav-right.is-active nav {
+    display: block; } }
+article.content {
+  padding-bottom: 2rem; }
+article section.comment-section article {
+  padding-bottom: 2rem; }
+
+.links.bulma {
+  padding-top: 1rem; }
+
+.label.is-pulled-left {
+  margin-bottom: 0;
+  margin-right: 0.5rem; }
+  .label.is-pulled-left::after {
+    content: ':'; }
+
+.navbar > .container > .navbar-brand {
+  margin-left: -1rem; }
+.navbar > .container > .navbar-menu {
+  margin-right: -1rem; }
+
+.block-system-branding-block > figure {
+  margin-right: 0.5rem; }
+
+/*# sourceMappingURL=overrides.css.map */

@@ -6,6 +6,7 @@ dependencies:
     - field.field.user.user.field_achievements
     - field.field.user.user.field_badges
     - field.field.user.user.field_experience_points
+    - field.field.user.user.field_followed_people
     - field.field.user.user.field_gold
     - field.field.user.user.field_level
     - field.field.user.user.field_primary_title
@@ -55,6 +56,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
+  field_followed_people:
+    weight: 17
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_gold:
     weight: 11
