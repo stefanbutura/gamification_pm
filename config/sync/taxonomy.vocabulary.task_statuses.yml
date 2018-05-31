@@ -1,9 +1,0 @@
-uuid: 2a0fdc9e-d49c-4eda-acd8-65673fb52efb
-langcode: en
-status: true
-dependencies: {  }
-name: 'Task statuses'
-vid: task_statuses
-description: ''
-hierarchy: 0
-weight: 0

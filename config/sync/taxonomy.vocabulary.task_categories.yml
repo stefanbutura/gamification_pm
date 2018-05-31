@@ -1,9 +1,0 @@
-uuid: d15bd9cf-08a3-4edb-ac10-853f8aadcae9
-langcode: en
-status: true
-dependencies: {  }
-name: 'Task categories'
-vid: task_categories
-description: ''
-hierarchy: 0
-weight: 0
