@@ -19,8 +19,39 @@ dependencies:
   module:
     - comment
     - datetime
+    - ds
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_threecol_33_34_33
+      library: layout_discovery/threecol_33_34_33
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      top:
+        - node_title
+        - langcode
+        - links
+        - body
+        - field_status
+        - field_priority
+        - field_assignee
+        - field_d
+        - field_estimated_time
+        - field_experience_points
+        - field_rewards
+        - field_task_number
+        - field_category
+        - comment
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
 id: node.task.default
 targetEntityType: node
 bundle: task
@@ -29,46 +60,46 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 3
     settings: {  }
     third_party_settings: {  }
-    region: content
+    region: top
   comment:
-    weight: 111
+    weight: 13
     label: above
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
     type: comment_default
-    region: content
+    region: top
   field_assignee:
-    weight: 104
+    weight: 6
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: top
   field_category:
-    weight: 110
+    weight: 12
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: top
   field_d:
-    weight: 105
+    weight: 7
     label: above
     settings:
       format_type: medium
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
-    region: content
+    region: top
   field_estimated_time:
-    weight: 106
+    weight: 8
     label: above
     settings:
       thousand_separator: ''
@@ -77,42 +108,42 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
-    region: content
+    region: top
   field_experience_points:
-    weight: 107
+    weight: 9
     label: above
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
-    region: content
+    region: top
   field_priority:
-    weight: 103
+    weight: 5
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: top
   field_rewards:
-    weight: 108
+    weight: 10
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: top
   field_status:
-    weight: 102
+    weight: 4
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: top
   field_task_number:
-    weight: 109
+    weight: 11
     label: above
     settings:
       thousand_separator: ''
@@ -121,11 +152,19 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
-    region: content
+    region: top
+  langcode:
+    type: language
+    weight: 1
+    region: top
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
   links:
-    weight: 100
-    region: content
+    weight: 2
+    region: top
     settings: {  }
     third_party_settings: {  }
-hidden:
-  langcode: true
+hidden: {  }

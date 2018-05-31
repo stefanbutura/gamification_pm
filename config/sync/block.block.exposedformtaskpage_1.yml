@@ -1,0 +1,23 @@
+uuid: 49630302-6982-4e8b-a0d7-f47c698e52d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.task
+  module:
+    - views
+  theme:
+    - licenta
+id: exposedformtaskpage_1
+theme: licenta
+region: header_search
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:task-page_1'
+settings:
+  id: 'views_exposed_filter_block:task-page_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility: {  }

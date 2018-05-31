@@ -13,7 +13,7 @@ _core:
 id: licenta_tools
 theme: licenta
 region: sidebar_first
-weight: 0
+weight: -6
 provider: null
 plugin: 'system_menu_block:tools'
 settings:
