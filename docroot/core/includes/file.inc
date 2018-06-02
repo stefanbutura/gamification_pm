@@ -307,12 +307,52 @@ function file_prepare_directory(&$directory, $options = FILE_MODIFY_PERMISSIONS)
     return FALSE;
   }
   // The directory exists, so check to see if it is writable.
-  $writable = is_writable($directory);
+  $writable = file_directory_is_writable($directory);
   if (!$writable && ($options & FILE_MODIFY_PERMISSIONS)) {
     return drupal_chmod($directory);
   }
 
   return $writable;
+}
+
+/**
+ * Determines if a directory is writable by the web server.
+ *
+ * In order to be able to write files within the directory, the directory
+ * itself must be writable, and it must also have the executable bit set. This
+ * helper function checks both at the same time.
+ *
+ * @param $uri
+ *   A URI or pathname pointing to the directory that will be checked.
+ *
+ * @return
+ *   TRUE if the directory is writable and executable; FALSE otherwise.
+ */
+function file_directory_is_writable($uri) {
+  // By converting the URI to a normal path using drupal_realpath(), we can
+  // correctly handle both stream wrappers and normal paths.
+  return is_writable(drupal_realpath($uri)) && drupal_is_executable($uri);
+}
+
+/**
+ * Determines if a file or directory is executable.
+ *
+ * PHP's is_executable() does not fully support stream wrappers, so this
+ * function fills that gap.
+ *
+ * @param $uri
+ *   A URI or pathname pointing to the file or directory that will be checked.
+ *
+ * @return
+ *   TRUE if the file or directory is executable; FALSE otherwise.
+ *
+ * @see is_executable()
+ * @ingroup php_wrappers
+ */
+function drupal_is_executable($uri) {
+  // By converting the URI to a normal path using drupal_realpath(), we can
+  // correctly handle both stream wrappers and normal paths.
+  return is_executable(drupal_realpath($uri));
 }
 
 /**
@@ -371,7 +411,7 @@ function file_save_htaccess($directory, $private = TRUE, $force_overwrite = FALS
   $htaccess_lines = FileStorage::htaccessLines($private);
 
   // Write the .htaccess file.
-  if (file_exists($directory) && is_writable($directory) && file_put_contents($htaccess_path, $htaccess_lines)) {
+  if (file_exists($directory) && file_directory_is_writable($directory) && file_put_contents($htaccess_path, $htaccess_lines)) {
     return drupal_chmod($htaccess_path, 0444);
   }
   else {

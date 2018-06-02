@@ -123,7 +123,7 @@ class PerformanceForm extends ConfigFormBase {
     ];
 
     $directory = 'public://';
-    $is_writable = is_dir($directory) && is_writable($directory);
+    $is_writable = is_dir($directory) && file_directory_is_writable($directory);
     $disabled = !$is_writable;
     $disabled_message = '';
     if (!$is_writable) {

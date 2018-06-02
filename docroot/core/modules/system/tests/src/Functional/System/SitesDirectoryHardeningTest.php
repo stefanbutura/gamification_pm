@@ -57,8 +57,8 @@ class SitesDirectoryHardeningTest extends BrowserTestBase {
     $this->assertEqual(REQUIREMENT_WARNING, $requirements['configuration_files']['severity'], 'Warning severity is properly set.');
     $this->assertEqual($this->t('Protection disabled'), (string) $requirements['configuration_files']['description']['#context']['configuration_error_list']['#items'][0], 'Description is properly set.');
 
-    $this->assertTrue(is_writable($site_path), 'Site directory remains writable when automatically fixing permissions is disabled.');
-    $this->assertTrue(is_writable($settings_file), 'settings.php remains writable when automatically fixing permissions is disabled.');
+    $this->assertTrue(file_directory_is_writable($site_path), 'Site directory remains writable when automatically fixing permissions is disabled.');
+    $this->assertTrue(file_directory_is_writable($settings_file), 'settings.php remains writable when automatically fixing permissions is disabled.');
 
     // Re-enable permissions enforcement.
     $settings = Settings::getAll();
@@ -68,8 +68,8 @@ class SitesDirectoryHardeningTest extends BrowserTestBase {
     // Manually trigger the requirements check.
     $this->checkSystemRequirements();
 
-    $this->assertFalse(is_writable($site_path), 'Site directory is protected when automatically fixing permissions is enabled.');
-    $this->assertFalse(is_writable($settings_file), 'settings.php is protected when automatically fixing permissions is enabled.');
+    $this->assertFalse(file_directory_is_writable($site_path), 'Site directory is protected when automatically fixing permissions is enabled.');
+    $this->assertFalse(file_directory_is_writable($settings_file), 'settings.php is protected when automatically fixing permissions is enabled.');
   }
 
   /**

@@ -27,7 +27,7 @@ trait HtmlOutputPrinterTrait {
       $html_output_directory = rtrim($html_output_directory, '/');
 
       // Check if directory exists.
-      if (!is_dir($html_output_directory) || !is_writable($html_output_directory)) {
+      if (!is_dir($html_output_directory) || !file_directory_is_writable($html_output_directory)) {
         $this->writeWithColor('bg-red, fg-black', "HTML output directory $html_output_directory is not a writable directory.");
       }
       else {

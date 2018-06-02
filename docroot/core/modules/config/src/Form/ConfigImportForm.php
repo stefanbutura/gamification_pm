@@ -53,7 +53,7 @@ class ConfigImportForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $directory = config_get_config_directory(CONFIG_SYNC_DIRECTORY);
-    $directory_is_writable = is_writable($directory);
+    $directory_is_writable = file_directory_is_writable($directory);
     if (!$directory_is_writable) {
       drupal_set_message($this->t('The directory %directory is not writable.', ['%directory' => $directory]), 'error');
     }

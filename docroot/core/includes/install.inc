@@ -510,7 +510,7 @@ function drupal_install_config_directories() {
       ':handbook_url' => 'https://www.drupal.org/server-permissions',
     ]));
   }
-  elseif (is_writable($config_directories[CONFIG_SYNC_DIRECTORY])) {
+  elseif (file_directory_is_writable($config_directories[CONFIG_SYNC_DIRECTORY])) {
     // Put a README.txt into the sync config directory. This is required so that
     // they can later be added to git. Since this directory is auto-created, we
     // have to write out the README rather than just adding it to the drupal core
@@ -693,12 +693,12 @@ function drupal_verify_install_file($file, $mask = NULL, $type = 'file') {
             }
             break;
           case FILE_WRITABLE:
-            if (!is_writable($file) && !drupal_install_fix_file($file, $mask)) {
+            if (!file_directory_is_writable($file) && !drupal_install_fix_file($file, $mask)) {
               $return = FALSE;
             }
             break;
           case FILE_EXECUTABLE:
-            if (!is_executable($file) && !drupal_install_fix_file($file, $mask)) {
+            if (!drupal_is_executable($file) && !drupal_install_fix_file($file, $mask)) {
               $return = FALSE;
             }
             break;
@@ -708,12 +708,12 @@ function drupal_verify_install_file($file, $mask = NULL, $type = 'file') {
             }
             break;
           case FILE_NOT_WRITABLE:
-            if (is_writable($file) && !drupal_install_fix_file($file, $mask)) {
+            if (file_directory_is_writable($file) && !drupal_install_fix_file($file, $mask)) {
               $return = FALSE;
             }
             break;
           case FILE_NOT_EXECUTABLE:
-            if (is_executable($file) && !drupal_install_fix_file($file, $mask)) {
+            if (drupal_is_executable($file) && !drupal_install_fix_file($file, $mask)) {
               $return = FALSE;
             }
             break;
@@ -808,12 +808,12 @@ function drupal_install_fix_file($file, $mask, $message = TRUE) {
           }
           break;
         case FILE_WRITABLE:
-          if (!is_writable($file)) {
+          if (!file_directory_is_writable($file)) {
             $mod |= 0222;
           }
           break;
         case FILE_EXECUTABLE:
-          if (!is_executable($file)) {
+          if (!drupal_is_executable($file)) {
             $mod |= 0111;
           }
           break;
@@ -823,12 +823,12 @@ function drupal_install_fix_file($file, $mask, $message = TRUE) {
           }
           break;
         case FILE_NOT_WRITABLE:
-          if (is_writable($file)) {
+          if (file_directory_is_writable($file)) {
             $mod &= ~0222;
           }
           break;
         case FILE_NOT_EXECUTABLE:
-          if (is_executable($file)) {
+          if (drupal_is_executable($file)) {
             $mod &= ~0111;
           }
           break;
