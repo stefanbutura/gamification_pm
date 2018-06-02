@@ -1,0 +1,11 @@
+uuid: 7d4a0c2c-08f8-4a68-98c3-e204243d88c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.icon
+id: node.icon
+target_entity_type_id: node
+target_bundle: icon
+default_langcode: site_default
+language_alterable: false

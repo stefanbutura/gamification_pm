@@ -1,0 +1,25 @@
+uuid: b853f2fd-40fa-41ad-ad1b-831e6918769f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gold
+    - node.type.task
+id: node.task.field_gold
+field_name: field_gold
+entity_type: node
+bundle: task
+label: Gold
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

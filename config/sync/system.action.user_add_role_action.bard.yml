@@ -1,0 +1,14 @@
+uuid: 3d0dfa8c-9c97-4bb7-8dab-074bd27ae97a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.bard
+  module:
+    - user
+id: user_add_role_action.bard
+label: 'Add the Bard role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: bard

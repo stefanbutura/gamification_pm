@@ -77,9 +77,49 @@ display:
           summary: ''
           description: ''
           columns:
+            field_task_number: field_task_number
+            field_category: field_category
+            field_priority: field_priority
+            field_status: field_status
             title: title
+            field_assignee: field_assignee
           info:
+            field_task_number:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_category:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_priority:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_status:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_assignee:
               sortable: false
               default_sort_order: asc
               align: ''

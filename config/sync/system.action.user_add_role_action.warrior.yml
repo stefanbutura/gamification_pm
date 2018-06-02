@@ -1,0 +1,14 @@
+uuid: 70960cc9-5a85-460d-869b-7be58b20fa1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.warrior
+  module:
+    - user
+id: user_add_role_action.warrior
+label: 'Add the Warrior role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: warrior

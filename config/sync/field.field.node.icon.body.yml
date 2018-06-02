@@ -1,0 +1,22 @@
+uuid: 5620bf7c-b8eb-4f31-990a-45e762fa4111
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.icon
+  module:
+    - text
+id: node.icon.body
+field_name: body
+entity_type: node
+bundle: icon
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,9 @@
+uuid: cbe15b23-2456-409a-b477-0e80e7bbe487
+langcode: en
+status: true
+dependencies: {  }
+id: warrior
+label: Warrior
+weight: 3
+is_admin: null
+permissions: {  }

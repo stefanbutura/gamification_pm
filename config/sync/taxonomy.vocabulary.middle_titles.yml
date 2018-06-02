@@ -1,9 +1,0 @@
-uuid: a79ebd6d-1226-4190-96c7-56dc922a9e29
-langcode: en
-status: true
-dependencies: {  }
-name: 'Middle titles'
-vid: middle_titles
-description: ''
-hierarchy: 0
-weight: 0

@@ -1,0 +1,14 @@
+uuid: 1d5434af-842b-4b61-acec-a723528dcaa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.bard
+  module:
+    - user
+id: user_remove_role_action.bard
+label: 'Remove the Bard role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: bard

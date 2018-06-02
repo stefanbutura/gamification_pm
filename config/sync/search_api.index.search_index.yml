@@ -11,6 +11,7 @@ dependencies:
     - field.storage.node.field_status
     - field.storage.node.field_priority
     - search_api.server.search
+    - core.entity_view_mode.node.search_resul
   module:
     - search_api
     - node
@@ -35,7 +36,7 @@ field_settings:
           mission: ''
           page: ''
           spent_time: ''
-          task: default
+          task: search_resul
         'entity:user':
           user: ''
   title:
@@ -115,6 +116,27 @@ field_settings:
     datasource_id: 'entity:user'
     property_path: name
     type: string
+  status:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  uid:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
 datasource_settings:
   'entity:node':
     bundles:
@@ -130,6 +152,16 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
   html_filter:
     all_fields: false
     fields:
@@ -162,7 +194,6 @@ processor_settings:
     weights:
       preprocess_index: -20
       preprocess_query: -20
-  rendered_item: {  }
   ignore_character:
     all_fields: false
     fields:
@@ -198,6 +229,31 @@ processor_settings:
     weights:
       preprocess_index: -10
       preprocess_query: -10
+  rendered_item: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
+  stemmer:
+    all_fields: false
+    fields:
+      - rendered_item
+    exceptions:
+      texan: texa
+      mexican: mexic
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+  tokenizer:
+    all_fields: false
+    fields:
+      - rendered_item
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
 tracker_settings:
   default:
     indexing_order: fifo

@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.task.field_d
     - field.field.node.task.field_estimated_time
     - field.field.node.task.field_experience_points
+    - field.field.node.task.field_gold
     - field.field.node.task.field_priority
     - field.field.node.task.field_rewards
     - field.field.node.task.field_status
@@ -118,6 +119,15 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: top
+  field_gold:
+    weight: 14
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
   field_priority:
     weight: 5
     label: above

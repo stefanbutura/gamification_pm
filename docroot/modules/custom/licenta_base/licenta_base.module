@@ -1,17 +1,40 @@
 <?php
 
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\licenta_base\LicentaHelper;
 
-function licenta_base_node_presave(EntityInterface $node) {
-  if (empty($node->field_task_number->value)) {
-    $nids = \Drupal::entityQuery('node')->condition('type', 'task')->execute();
-    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
-    $max = 0;
-    foreach ($nodes as $task) {
-      if ($task->field_task_number->value > $max) {
-        $max = $task->field_task_number->value;
+function licenta_base_node_presave(Node $node) {
+  if ($node->bundle() == 'task') {
+    // Automatically set task number.
+    if (empty($node->field_task_number->value)) {
+      $nids = \Drupal::entityQuery('node')->condition('type', 'task')->execute();
+      $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+      $max = 0;
+      foreach ($nodes as $task) {
+        if ($task->field_task_number->value > $max) {
+          $max = $task->field_task_number->value;
+        }
       }
+      $node->field_task_number->value = $max + 1;
     }
-    $node->field_task_number->value = $max + 1;
+
+    $old_node = Node::load($node->id());
+    if ($old_node->field_status->target_id != LicentaHelper::$STATUS_APPROVED
+      && $node->field_status->target_id == LicentaHelper::$STATUS_APPROVED) {
+      /** @var \Drupal\user\Entity\User $user */
+      $user = $node->field_assignee->entity;
+
+      // Icons, achievements, titles, badges
+      foreach ($node->field_rewards->getValue() as $reward) {
+        $user->field_rewards[] = $reward;
+      }
+
+      $user->field_experience_points->value += $node->field_experience_points->value;
+      $user->field_level->value = LicentaHelper::getLevelFromXp($user->field_experience_points->value);
+      $user->field_gold->value += $node->field_gold->value;
+      $user->save();
+    }
   }
 }

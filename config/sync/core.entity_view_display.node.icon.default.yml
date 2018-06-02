@@ -1,0 +1,38 @@
+uuid: 73594044-5715-47b5-8e25-9c36ba5cab62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.icon.body
+    - field.field.node.icon.field_image
+    - node.type.icon
+  module:
+    - image
+    - text
+    - user
+id: node.icon.default
+targetEntityType: node
+bundle: icon
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

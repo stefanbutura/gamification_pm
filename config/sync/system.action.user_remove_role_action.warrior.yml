@@ -1,0 +1,14 @@
+uuid: cb96f981-06ef-4982-bcf4-ad261585963d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.warrior
+  module:
+    - user
+id: user_remove_role_action.warrior
+label: 'Remove the Warrior role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: warrior

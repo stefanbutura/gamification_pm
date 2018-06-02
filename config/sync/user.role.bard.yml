@@ -1,0 +1,9 @@
+uuid: 0dd96a98-653a-4649-ad49-8e5788df851d
+langcode: en
+status: true
+dependencies: {  }
+id: bard
+label: Bard
+weight: 5
+is_admin: null
+permissions: {  }

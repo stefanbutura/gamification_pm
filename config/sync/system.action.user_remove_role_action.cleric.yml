@@ -1,0 +1,14 @@
+uuid: fc632dca-cf00-4f5d-8499-bb6e8da93476
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.cleric
+  module:
+    - user
+id: user_remove_role_action.cleric
+label: 'Remove the Cleric role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: cleric

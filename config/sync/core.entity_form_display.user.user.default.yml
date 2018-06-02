@@ -3,8 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_achievements
-    - field.field.user.user.field_badges
     - field.field.user.user.field_experience_points
     - field.field.user.user.field_followed_people
     - field.field.user.user.field_gold
@@ -12,12 +10,13 @@ dependencies:
     - field.field.user.user.field_primary_title
     - field.field.user.user.field_profile_achievements
     - field.field.user.user.field_profile_badges
+    - field.field.user.user.field_rewards
     - field.field.user.user.field_secondary_title
-    - field.field.user.user.field_titles
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
+    - path
     - user
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
@@ -31,24 +30,6 @@ content:
     region: content
   contact:
     weight: 5
-    region: content
-  field_achievements:
-    weight: 7
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_badges:
-    weight: 8
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
     region: content
   field_experience_points:
     weight: 9
@@ -107,8 +88,8 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_secondary_title:
-    weight: 16
+  field_rewards:
+    weight: 31
     settings:
       match_operator: CONTAINS
       size: 60
@@ -116,8 +97,8 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_titles:
-    weight: 14
+  field_secondary_title:
+    weight: 16
     settings:
       match_operator: CONTAINS
       size: 60
@@ -128,6 +109,12 @@ content:
   language:
     weight: 0
     region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   timezone:
     weight: 6
     region: content

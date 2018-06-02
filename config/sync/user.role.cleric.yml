@@ -1,0 +1,9 @@
+uuid: 02b02eea-2e01-4097-a11a-93fb661eb60d
+langcode: en
+status: true
+dependencies: {  }
+id: cleric
+label: Cleric
+weight: 4
+is_admin: null
+permissions: {  }

@@ -3,14 +3,14 @@ langcode: en
 status: true
 dependencies:
   module:
-    - taxonomy
+    - node
     - user
 id: user.field_primary_title
 field_name: field_primary_title
 entity_type: user
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: node
 module: core
 locked: false
 cardinality: 1

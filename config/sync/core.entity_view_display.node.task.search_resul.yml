@@ -1,0 +1,92 @@
+uuid: 7336d6b2-7733-4c80-a8d4-7f5c89153c2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_resul
+    - field.field.node.task.body
+    - field.field.node.task.comment
+    - field.field.node.task.field_assignee
+    - field.field.node.task.field_category
+    - field.field.node.task.field_d
+    - field.field.node.task.field_estimated_time
+    - field.field.node.task.field_experience_points
+    - field.field.node.task.field_priority
+    - field.field.node.task.field_rewards
+    - field.field.node.task.field_status
+    - field.field.node.task.field_task_number
+    - node.type.task
+  module:
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      content:
+        - node_title
+        - field_category
+        - field_assignee
+        - body
+        - node_link
+    fields:
+      node_link:
+        plugin_id: node_link
+        weight: 4
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+id: node.task.search_resul
+targetEntityType: node
+bundle: task
+mode: search_resul
+content:
+  body:
+    type: text_trimmed
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  field_assignee:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_category:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+hidden:
+  comment: true
+  field_d: true
+  field_estimated_time: true
+  field_experience_points: true
+  field_priority: true
+  field_rewards: true
+  field_status: true
+  field_task_number: true
+  langcode: true
+  links: true

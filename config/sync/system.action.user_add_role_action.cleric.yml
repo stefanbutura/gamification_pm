@@ -1,0 +1,14 @@
+uuid: 7e3381aa-4498-4216-865c-694817b4e1f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.cleric
+  module:
+    - user
+id: user_add_role_action.cleric
+label: 'Add the Cleric role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: cleric

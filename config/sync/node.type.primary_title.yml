@@ -1,0 +1,17 @@
+uuid: 8d059995-498b-4aa6-a314-d192abc20d39
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Primary title'
+type: primary_title
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
