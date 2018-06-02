@@ -8,3 +8,11 @@
 .table {
     width: 100%;
 }
+
+#block-licenta-content .group-right {
+    padding-left: 10px;
+}
+
+#views-exposed-form-search-page-1 {
+    display: flex;
+}

@@ -1,0 +1,14 @@
+{% set imagestyle = {
+    '#theme':      'image_style',
+    '#style_name': 'thumbnail',
+    '#uri':        picture.entity.uri.value,
+    '#alt':        picture.alt,
+    '#attributes': { class: 'pull-left' },
+} %}
+
+{{ imagestyle }}
+
+{% if title %}
+    <h1{{ title_attributes.addClass('title') }}>{{ title }}</h1>
+    <h2 class="subtitle">{{ role }}</h2>
+{% endif %}
