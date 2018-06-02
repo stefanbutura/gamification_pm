@@ -1,0 +1,7 @@
+licenta_base_add_spent_time.form:
+ path: '/task/{task_number}/add-time'
+ defaults:
+   _title: 'Add spent time'
+   _form: '\Drupal\licenta_base\Form\AddSpentTime'
+ requirements:
+   _permission: 'access content'

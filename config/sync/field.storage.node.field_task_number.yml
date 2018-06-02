@@ -1,4 +1,4 @@
-uuid: 9a60c918-b5b3-467e-b86d-be71122ff5be
+uuid: 54e74f49-9406-403e-af77-98f7a053182d
 langcode: en
 status: true
 dependencies:
@@ -7,10 +7,10 @@ dependencies:
 id: node.field_task_number
 field_name: field_task_number
 entity_type: node
-type: decimal
+type: integer
 settings:
-  precision: 10
-  scale: 2
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

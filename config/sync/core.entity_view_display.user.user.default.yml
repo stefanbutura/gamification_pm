@@ -13,10 +13,33 @@ dependencies:
     - field.field.user.user.field_rewards
     - field.field.user.user.field_secondary_title
     - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
-    - image
+    - ds
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_2col
+      library: ds/ds_2col
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          left: div
+          right: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          left: {  }
+          right: {  }
+    regions:
+      left:
+        - field_profile_achievements
+      right:
+        - field_profile_badges
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
 id: user.user.default
@@ -24,92 +47,35 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_experience_points:
-    weight: 8
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
-  field_followed_people:
-    weight: 16
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_gold:
-    weight: 10
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
-  field_level:
-    weight: 9
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
-  field_primary_title:
-    weight: 14
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_profile_achievements:
-    weight: 12
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_profile_badges:
-    weight: 11
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_rewards:
-    weight: 17
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_secondary_title:
-    weight: 15
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  member_for:
-    weight: 5
-    region: content
-  user_picture:
-    type: image
     weight: 0
-    region: content
-    settings:
-      image_style: thumbnail
-      image_link: content
-    third_party_settings: {  }
     label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    type: entity_reference_label
+    region: left
+  field_profile_badges:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    type: entity_reference_entity_view
+    region: right
 hidden:
+  field_experience_points: true
+  field_followed_people: true
+  field_gold: true
+  field_level: true
+  field_primary_title: true
+  field_rewards: true
+  field_secondary_title: true
   langcode: true
+  member_for: true
+  user_picture: true

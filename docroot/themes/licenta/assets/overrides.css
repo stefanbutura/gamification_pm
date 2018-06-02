@@ -16,3 +16,16 @@
 #views-exposed-form-search-page-1 {
     display: flex;
 }
+
+.comment .group-left {
+    width: auto;
+    padding-right: 10px;
+}
+
+.panel-block > div {
+    padding-right: 10px;
+}
+
+.reward-bundle {
+    font-weight: bold;
+}

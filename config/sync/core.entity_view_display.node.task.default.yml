@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.task.field_gold
     - field.field.node.task.field_priority
     - field.field.node.task.field_rewards
+    - field.field.node.task.field_spent_time
     - field.field.node.task.field_status
     - field.field.node.task.field_task_number
     - node.type.task
@@ -26,33 +27,43 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_threecol_33_34_33
-      library: layout_discovery/threecol_33_34_33
+      id: licenta_base_task_full
+      library: null
       disable_css: false
       entity_classes: all_classes
-      settings: {  }
+      settings:
+        wrappers:
+          left: div
+          right: div
+          footer: div
+          comments: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          left: {  }
+          right: {  }
+          footer: {  }
+          comments: {  }
     regions:
-      top:
-        - node_title
-        - langcode
-        - links
-        - body
+      left:
+        - field_assignee
+        - field_category
         - field_status
         - field_priority
-        - field_assignee
         - field_d
         - field_estimated_time
+        - field_spent_time
+      right:
         - field_experience_points
+        - field_gold
         - field_rewards
-        - field_task_number
-        - field_category
+      footer:
+        - body
+      comments:
         - comment
-    fields:
-      node_title:
-        plugin_id: node_title
-        weight: 0
-        label: hidden
-        formatter: default
 id: node.task.default
 targetEntityType: node
 bundle: task
@@ -61,100 +72,47 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 3
+    weight: 10
     settings: {  }
     third_party_settings: {  }
-    region: top
+    region: footer
   comment:
-    weight: 13
-    label: above
+    type: comment_default
+    weight: 11
+    region: comments
+    label: hidden
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    type: comment_default
-    region: top
   field_assignee:
-    weight: 6
-    label: above
+    weight: 0
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: top
+    region: left
   field_category:
-    weight: 12
-    label: above
+    weight: 1
+    label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
-    region: top
+    region: left
   field_d:
-    weight: 7
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
-    region: top
-  field_estimated_time:
-    weight: 8
-    label: above
-    settings:
-      thousand_separator: ''
-      decimal_separator: .
-      scale: 2
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_decimal
-    region: top
-  field_experience_points:
-    weight: 9
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: top
-  field_gold:
-    weight: 14
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
-  field_priority:
-    weight: 5
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: top
-  field_rewards:
-    weight: 10
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: top
-  field_status:
     weight: 4
-    label: above
+    label: inline
     settings:
-      link: true
+      timezone_override: ''
+      date_format: 'Y-m-d\TH:i:s'
     third_party_settings: {  }
-    type: entity_reference_label
-    region: top
-  field_task_number:
-    weight: 11
-    label: above
+    type: datetime_custom
+    region: left
+  field_estimated_time:
+    weight: 5
+    label: inline
     settings:
       thousand_separator: ''
       decimal_separator: .
@@ -162,19 +120,72 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
-    region: top
-  langcode:
-    type: language
-    weight: 1
-    region: top
+    region: left
+  field_experience_points:
+    weight: 7
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: right
+  field_gold:
+    type: number_integer
+    weight: 8
+    region: right
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_priority:
+    weight: 3
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: left
+  field_rewards:
+    weight: 9
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    type: entity_reference_entity_view
+    region: right
+  field_spent_time:
+    weight: 6
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: left
+  field_status:
+    weight: 2
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: left
+  field_task_number:
+    weight: 12
     label: above
     settings:
-      link_to_entity: false
-      native_language: false
+      thousand_separator: ''
+      prefix_suffix: true
     third_party_settings: {  }
-  links:
-    weight: 2
-    region: top
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+    type: number_integer
+    region: content
+hidden:
+  langcode: true
+  links: true

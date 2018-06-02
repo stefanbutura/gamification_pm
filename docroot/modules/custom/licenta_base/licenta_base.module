@@ -37,6 +37,17 @@ function licenta_base_node_presave(Node $node) {
       $user->save();
     }
   }
+
+  if ($node->bundle() == 'spent_time') {
+    $diff = 0;
+    if (!empty($node->id())) {
+      $old_node = Node::load($node->id());
+      $diff = $node->field_spent_time->value - $old_node->field_spent_time;
+    }
+    $task = $node->field_task->entity;
+    $task->field_spent_time->value += ($node->field_spent_time->value - $diff);
+    $task->save();
+  }
 }
 
 function licenta_base_theme($existing, $type, $theme, $path) {

@@ -11,7 +11,7 @@ id: user.user.field_profile_achievements
 field_name: field_profile_achievements
 entity_type: user
 bundle: user
-label: 'Profile achievements'
+label: Achievements
 description: ''
 required: false
 translatable: false

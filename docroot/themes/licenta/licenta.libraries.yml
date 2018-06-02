@@ -5,3 +5,4 @@ global:
       assets/licenta.style.css: {}
   dependencies:
     - bulma/global
+

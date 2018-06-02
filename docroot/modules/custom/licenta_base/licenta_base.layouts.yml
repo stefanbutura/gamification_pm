@@ -1,0 +1,15 @@
+licenta_base_task_full:
+  label: Task full
+  category: 'Licenta base'
+  template: templates/licenta-base-task-full
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  regions:
+    left:
+      label: Left
+    right:
+      label: Right
+    footer:
+      label: Footer
+    comments:
+      label: Comments

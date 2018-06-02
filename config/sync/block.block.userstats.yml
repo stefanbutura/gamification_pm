@@ -1,0 +1,26 @@
+uuid: 2aad507a-ecad-40e2-b616-65efe6a9b4dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - licenta_base
+    - system
+  theme:
+    - licenta
+id: userstats
+theme: licenta
+region: content
+weight: -7
+provider: null
+plugin: licenta_base_user_stats_block
+settings:
+  id: licenta_base_user_stats_block
+  label: 'User stats'
+  provider: licenta_base
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,25 @@
+<div class="columns">
+    <div class="column">
+        <h2 class="panel-heading">{{ 'Details' | trans }}</h2>
+        <div class="panel-block">
+            {{ left }}
+            <a href="{{ '/task/' ~ content['#node'].field_task_number.value ~ '/add-time' }}">{{ 'Add spent time' | trans }}</a>
+        </div>
+    </div>
+    <div class="column">
+        <h2 class="panel-heading">{{ 'Rewards' | trans }}</h2>
+        <div class="panel-block">{{ right }}</div>
+    </div>
+</div>
+<div class="columns">
+    <div class="column">
+        <h2 class="panel-heading">{{ 'Description' | trans }}</h2>
+        <div class="panel-block">{{ footer }}</div>
+    </div>
+</div>
+<div class="columns">
+    <div class="column">
+        <h2 class="panel-heading">{{ 'Comments' | trans }}</h2>
+        <div class="panel-block">{{ comments }}</div>
+    </div>
+</div>

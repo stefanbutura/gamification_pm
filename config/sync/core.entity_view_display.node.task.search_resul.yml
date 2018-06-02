@@ -11,10 +11,11 @@ dependencies:
     - field.field.node.task.field_d
     - field.field.node.task.field_estimated_time
     - field.field.node.task.field_experience_points
+    - field.field.node.task.field_gold
     - field.field.node.task.field_priority
     - field.field.node.task.field_rewards
+    - field.field.node.task.field_spent_time
     - field.field.node.task.field_status
-    - field.field.node.task.field_task_number
     - node.type.task
   module:
     - ds
@@ -34,13 +35,7 @@ third_party_settings:
         - field_category
         - field_assignee
         - body
-        - node_link
     fields:
-      node_link:
-        plugin_id: node_link
-        weight: 4
-        label: hidden
-        formatter: default
       node_title:
         plugin_id: node_title
         weight: 0
@@ -84,9 +79,10 @@ hidden:
   field_d: true
   field_estimated_time: true
   field_experience_points: true
+  field_gold: true
   field_priority: true
   field_rewards: true
+  field_spent_time: true
   field_status: true
-  field_task_number: true
   langcode: true
   links: true

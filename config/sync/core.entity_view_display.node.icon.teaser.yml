@@ -5,25 +5,48 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.icon.body
+    - field.field.node.icon.field_image
+    - image.style.thumbnail
     - node.type.icon
   module:
-    - text
+    - ds
+    - image
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      ds_content:
+        - field_image
+        - body
+        - langcode
 id: node.icon.teaser
 targetEntityType: node
 bundle: icon
 mode: teaser
 content:
-  body:
+  field_image:
+    type: image
+    weight: 0
+    region: content
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
     settings:
-      trim_length: 600
+      image_style: thumbnail
+      image_link: ''
     third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    region: content
 hidden:
+  body: true
   langcode: true
+  links: true

@@ -1,27 +1,26 @@
-uuid: dcae562b-1690-404e-ab94-6e5ce76876ac
+uuid: 608845e9-45d3-45db-85d3-fde035f12649
 langcode: en
 status: true
 dependencies:
   module:
+    - licenta_base
     - system
   theme:
     - licenta
-_core:
-  default_config_hash: af-Hda_bXaMlbP3dZNouwP-kmujnpgDFRUlr0Aj9KTE
-id: licenta_page_title
+id: usertitle
 theme: licenta
 region: header
 weight: 0
 provider: null
-plugin: page_title_block
+plugin: licenta_base_user_title_block
 settings:
-  id: page_title_block
-  label: 'Page title'
-  provider: core
+  id: licenta_base_user_title_block
+  label: 'User title'
+  provider: licenta_base
   label_display: '0'
 visibility:
   request_path:
     id: request_path
     pages: '/user/*'
-    negate: true
+    negate: false
     context_mapping: {  }

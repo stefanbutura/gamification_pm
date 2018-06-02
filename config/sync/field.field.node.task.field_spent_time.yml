@@ -1,0 +1,25 @@
+uuid: d36bdc37-b06d-497b-b48e-f1d4c7ce270e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_spent_time
+    - node.type.task
+id: node.task.field_spent_time
+field_name: field_spent_time
+entity_type: node
+bundle: task
+label: 'Spent time'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: ' hours'
+field_type: decimal

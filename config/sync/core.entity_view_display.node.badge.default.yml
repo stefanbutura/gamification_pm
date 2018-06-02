@@ -5,34 +5,47 @@ dependencies:
   config:
     - field.field.node.badge.body
     - field.field.node.badge.field_image
+    - image.style.medium
     - node.type.badge
   module:
+    - ds
     - image
-    - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_content: {  }
+    regions:
+      ds_content:
+        - field_image
 id: node.badge.default
 targetEntityType: node
 bundle: badge
 mode: default
 content:
-  body:
-    label: hidden
-    type: text_default
-    weight: 101
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_image:
-    weight: 102
-    label: above
+    weight: 0
+    label: hidden
     settings:
-      image_style: ''
+      image_style: medium
       image_link: ''
     third_party_settings: {  }
     type: image
-    region: content
-  links:
-    weight: 100
-    region: content
+    region: ds_content
 hidden:
+  body: true
   langcode: true
+  links: true
