@@ -29,3 +29,16 @@
 .reward-bundle {
     font-weight: bold;
 }
+
+.user-title-image {
+    padding-right: 5px;
+}
+
+.shop-row .views-col {
+    text-align: center;
+    padding-right: 30px;
+}
+
+.shop-row .views-field-field-image {
+    height: 220px;
+}

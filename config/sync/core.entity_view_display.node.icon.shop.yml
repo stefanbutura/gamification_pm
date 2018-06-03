@@ -1,0 +1,63 @@
+uuid: 80d455ab-3e85-4e6e-b73a-996fcc2ed84c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.shop
+    - field.field.node.icon.body
+    - field.field.node.icon.field_image
+    - field.field.node.icon.field_price
+    - image.style.medium
+    - node.type.icon
+  module:
+    - ds
+    - image
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_content: {  }
+    regions:
+      ds_content:
+        - field_image
+        - field_price
+id: node.icon.shop
+targetEntityType: node
+bundle: icon
+mode: shop
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: ds_content
+  field_price:
+    type: number_integer
+    weight: 1
+    region: ds_content
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+hidden:
+  body: true
+  langcode: true
+  links: true

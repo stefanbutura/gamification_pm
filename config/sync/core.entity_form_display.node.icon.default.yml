@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.icon.body
     - field.field.node.icon.field_image
+    - field.field.node.icon.field_price
     - image.style.thumbnail
     - node.type.icon
   module:
@@ -38,6 +39,13 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_price:
+    weight: 123
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
   langcode:
     type: language_select

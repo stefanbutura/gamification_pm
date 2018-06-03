@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.icon.body
     - field.field.node.icon.field_image
+    - field.field.node.icon.field_price
     - node.type.icon
   module:
     - image
@@ -18,12 +19,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_image:
-    weight: 102
+    weight: 2
     label: above
     settings:
       image_style: ''
@@ -32,7 +33,10 @@ content:
     type: image
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_price: true
   langcode: true

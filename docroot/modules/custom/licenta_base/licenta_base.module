@@ -4,6 +4,7 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\licenta_base\LicentaHelper;
+use Drupal\user\Entity\User;
 
 function licenta_base_node_presave(Node $node) {
   if ($node->bundle() == 'task') {
@@ -68,3 +69,15 @@ function licenta_base_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     $form['actions']['submit']['#value'] = '';
   }
 }
+
+function licenta_base_views_pre_render(\Drupal\views\ViewExecutable $view) {
+  if ($view->id() == 'shop') {
+    foreach ($view->result as $idx => $result) {
+      $icon = $result->_entity;
+      if (LicentaHelper::isAlreadyOwned($icon) || !LicentaHelper::isAffordable($icon)) {
+        unset($view->result[$idx]);
+      }
+    }
+  }
+}
+

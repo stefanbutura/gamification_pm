@@ -1,0 +1,33 @@
+uuid: f141f03e-76c6-4587-9230-00efeff468d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_icon
+    - node.type.icon
+  content:
+    - 'node:icon:255da20e-9abe-4ffe-80a4-9733ed5b0edf'
+  module:
+    - user
+id: user.user.field_icon
+field_name: field_icon
+entity_type: user
+bundle: user
+label: Icon
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 255da20e-9abe-4ffe-80a4-9733ed5b0edf
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      icon: icon
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

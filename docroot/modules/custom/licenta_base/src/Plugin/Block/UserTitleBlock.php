@@ -35,7 +35,7 @@ class UserTitleBlock extends BlockBase {
     $complete_title .= ', ' . $user->field_primary_title->entity->getTitle();
     $complete_title .= ' ' . $user->field_secondary_title->entity->getTitle();
 
-    $picture = $user->user_picture;
+    $picture = $user->field_icon->entity->field_image;
     $user_class = $user->getRoles();
     $role = end($user_class);
     $role_label = Role::load($role)->label();

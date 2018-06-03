@@ -5,3 +5,10 @@ licenta_base_add_spent_time.form:
    _form: '\Drupal\licenta_base\Form\AddSpentTime'
  requirements:
    _permission: 'access content'
+
+licenta_base.shop:
+  path: '/shop/{node}'
+  defaults:
+    _controller: '\Drupal\licenta_base\Controller\ShopController::buyItem'
+  requirements:
+    _permission: 'access content'
