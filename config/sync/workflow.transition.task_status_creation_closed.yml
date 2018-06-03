@@ -1,0 +1,17 @@
+uuid: bb259abb-10ad-4e1f-b5a8-12257f6d8c51
+langcode: en
+status: true
+dependencies: {  }
+id: task_status_creation_closed
+label: null
+module: workflow
+from_sid: task_status_creation
+to_sid: task_status_closed
+roles:
+  administrator: administrator
+  cleric: cleric
+  workflow_author: '0'
+  anonymous: '0'
+  authenticated: '0'
+  warrior: '0'
+  bard: '0'

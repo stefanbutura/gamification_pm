@@ -1,0 +1,45 @@
+display:
+  default:
+    display_title: Expert
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Aplicare
+          reset_button_label: Resetează
+          exposed_sorts_label: 'Sortare după'
+          sort_asc_label: Ascendent
+          sort_desc_label: Desc
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elemente pe pagină'
+            items_per_page_options_all_label: '- Toate -'
+            offset_label: Decalaj
+          tags:
+            previous: ‹‹
+            next: ››
+      fields:
+        hid:
+          separator: ', '
+        timestamp:
+          label: 'Amprentă timp'
+          separator: ', '
+        field_name:
+          label: 'Nume câmp'
+          separator: ', '
+        from_sid:
+          separator: ', '
+        to_sid:
+          separator: ', '
+        uid:
+          label: 'ID Utilizator'
+          separator: ', '
+        comment:
+          label: 'Mesaj jurnal'
+          separator: ', '
+        operations:
+          label: Operaţii
+      arguments:
+        entity_id:
+          exception:
+            title: Toate

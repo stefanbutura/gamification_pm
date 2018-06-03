@@ -1,0 +1,22 @@
+uuid: f9fef99a-b381-4a84-8e95-6179b501f49f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_workflow_status
+    - node.type.task
+  module:
+    - workflow
+id: node.task.field_workflow_status
+field_name: field_workflow_status
+entity_type: node
+bundle: task
+label: Status
+description: ''
+required: true
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: workflow

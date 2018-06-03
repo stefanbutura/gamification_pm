@@ -1,0 +1,10 @@
+uuid: 3faf5110-f783-4596-9261-e15b049e5031
+langcode: en
+status: true
+dependencies: {  }
+id: task_status_acceptance
+label: Acceptance
+module: workflow
+wid: task_status
+weight: -7
+sysid: 0

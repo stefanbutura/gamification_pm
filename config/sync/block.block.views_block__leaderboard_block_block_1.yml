@@ -1,0 +1,30 @@
+uuid: e44a187f-7e9b-4f72-95c4-dcf9d31bba90
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.leaderboard_block
+  module:
+    - system
+    - views
+  theme:
+    - licenta
+id: views_block__leaderboard_block_block_1
+theme: licenta
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:leaderboard_block-block_1'
+settings:
+  id: 'views_block:leaderboard_block-block_1'
+  label: 'Global leaderboard'
+  provider: views
+  label_display: visible
+  views_label: 'Global leaderboard'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /leaderboards
+    negate: false
+    context_mapping: {  }

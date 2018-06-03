@@ -1,0 +1,17 @@
+uuid: efc01d05-ecda-478a-8a8b-2d3137f6a978
+langcode: en
+status: true
+dependencies: {  }
+id: task_status_underwork_closed
+label: null
+module: workflow
+from_sid: task_status_underwork
+to_sid: task_status_closed
+roles:
+  workflow_author: workflow_author
+  administrator: administrator
+  cleric: cleric
+  anonymous: '0'
+  authenticated: '0'
+  warrior: '0'
+  bard: '0'

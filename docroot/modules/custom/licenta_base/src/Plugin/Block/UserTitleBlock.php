@@ -32,12 +32,32 @@ class UserTitleBlock extends BlockBase {
 
     /** @var User $user */
     $complete_title = $user->getAccountName();
-    $complete_title .= ', ' . $user->field_primary_title->entity->getTitle();
-    $complete_title .= ' ' . $user->field_secondary_title->entity->getTitle();
+    if (!empty($user->field_primary_title->entity) || !empty($user->field_secondary_title->entity)) {
+      $complete_title .= ', ';
+      if (!empty($user->field_primary_title->entity)) {
+        $complete_title .= $user->field_primary_title->entity->getTitle() . ' ';
+      }
+      if (!empty($user->field_primary_title->entity)) {
+        $complete_title .= $user->field_secondary_title->entity->getTitle();
+      }
+    }
 
-    $picture = $user->field_icon->entity->field_image;
+    $flag_link = [
+      '#lazy_builder' => ['flag.link_builder:build', [
+        $user->getEntityTypeId(),
+        $user->id(),
+        'followed',
+      ]],
+      '#create_placeholder' => TRUE,
+    ];
+
+    $picture = !empty($user->field_icon->entity) ? $user->field_icon->entity->field_image : NULL;
     $user_class = $user->getRoles();
     $role = end($user_class);
+
+    if ($role == 'workflow_author') {
+      $role = $user_class[count($user_class) - 2];
+    }
     $role_label = Role::load($role)->label();
 
     return [
@@ -45,6 +65,7 @@ class UserTitleBlock extends BlockBase {
       '#title' => $complete_title,
       '#role' => $role_label,
       '#picture' => $picture,
+      '#flag_link' => $flag_link,
     ];
   }
 

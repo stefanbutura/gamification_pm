@@ -1,0 +1,17 @@
+uuid: 7dbc4e68-62b2-4639-aff0-bc93c1cbf642
+langcode: en
+status: true
+dependencies: {  }
+id: task_status_acceptance_underwork
+label: null
+module: workflow
+from_sid: task_status_acceptance
+to_sid: task_status_underwork
+roles:
+  workflow_author: workflow_author
+  warrior: warrior
+  bard: bard
+  anonymous: '0'
+  authenticated: '0'
+  administrator: '0'
+  cleric: '0'

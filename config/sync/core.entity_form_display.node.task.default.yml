@@ -14,14 +14,15 @@ dependencies:
     - field.field.node.task.field_priority
     - field.field.node.task.field_rewards
     - field.field.node.task.field_spent_time
-    - field.field.node.task.field_status
     - field.field.node.task.field_task_number
+    - field.field.node.task.field_workflow_status
     - node.type.task
   module:
     - comment
     - datetime
     - path
     - text
+    - workflow
 id: node.task.default
 targetEntityType: node
 bundle: task
@@ -37,11 +38,11 @@ content:
     third_party_settings: {  }
     region: content
   comment:
-    weight: 26
+    type: comment_default
+    weight: 19
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: comment_default
-    region: content
   created:
     type: datetime_timestamp
     weight: 3
@@ -50,21 +51,15 @@ content:
     third_party_settings: {  }
   field_assignee:
     weight: 11
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_category:
     weight: 16
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_d:
     weight: 12
@@ -87,14 +82,14 @@ content:
     type: number
     region: content
   field_gold:
-    weight: 27
+    weight: 17
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_priority:
-    weight: 10
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
@@ -104,35 +99,22 @@ content:
     region: content
   field_rewards:
     weight: 15
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_spent_time:
-    weight: 28
+    weight: 18
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
-  field_status:
-    weight: 9
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+  field_workflow_status:
+    weight: 10
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_task_number:
-    weight: 29
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
+    type: workflow_default
     region: content
   langcode:
     type: language_select
@@ -185,4 +167,5 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_task_number: true

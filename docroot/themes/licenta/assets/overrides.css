@@ -23,6 +23,7 @@
 }
 
 .panel-block > div {
+    width: 100%;
     padding-right: 10px;
 }
 
@@ -41,4 +42,25 @@
 
 .shop-row .views-field-field-image {
     height: 220px;
+}
+
+.user-subtitle {
+    margin-bottom: 0 !important;
+    /*padding-top: 2px;*/
+}
+
+#edit-workflow-scheduling {
+    display: none;
+}
+
+#edit-actions {
+    padding-bottom: 10px;
+}
+
+.comment-section {
+    width: 100%;
+}
+
+.search-row .views-col {
+    padding-bottom: 10px;
 }

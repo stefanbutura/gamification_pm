@@ -1,0 +1,10 @@
+uuid: e08c1d15-2889-44c4-8065-58c63824aafd
+langcode: en
+status: true
+dependencies: {  }
+id: task_status_approved
+label: Approved
+module: workflow
+wid: task_status
+weight: -6
+sysid: 0

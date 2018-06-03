@@ -1,0 +1,10 @@
+uuid: b191eb72-e6a6-4409-a824-07af3969b9c9
+langcode: en
+status: true
+dependencies: {  }
+id: task_status_new_new
+label: null
+module: workflow
+from_sid: task_status_new
+to_sid: task_status_new
+roles: {  }

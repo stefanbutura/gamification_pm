@@ -6,7 +6,7 @@ use Drupal\node\NodeInterface;
 use Drupal\user\Entity\User;
 
 class LicentaHelper {
-  static $STATUS_APPROVED = 7;
+  static $STATUS_APPROVED = 'task_status_approved';
 
   static function getLevelFromXp($xp) {
     $level = 1;
@@ -30,7 +30,7 @@ class LicentaHelper {
 
   static function isAffordable(NodeInterface $node) {
     $current_user = User::load(\Drupal::currentUser()->id());
-    if (empty($node->field_price)) {
+    if (empty($node->field_price->value)) {
       return FALSE;
     }
     if ($current_user->field_gold->value < $node->field_price->value) {

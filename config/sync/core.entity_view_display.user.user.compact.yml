@@ -4,10 +4,18 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_experience_points
+    - field.field.user.user.field_followed_people
+    - field.field.user.user.field_gold
+    - field.field.user.user.field_icon
+    - field.field.user.user.field_level
+    - field.field.user.user.field_primary_title
+    - field.field.user.user.field_profile_achievements
+    - field.field.user.user.field_profile_badges
+    - field.field.user.user.field_rewards
+    - field.field.user.user.field_secondary_title
     - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
-    - image
     - user
 _core:
   default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
@@ -16,15 +24,25 @@ targetEntityType: user
 bundle: user
 mode: compact
 content:
-  user_picture:
-    type: image
+  field_icon:
+    type: entity_reference_entity_view
     weight: 0
     region: content
-    settings:
-      image_style: thumbnail
-      image_link: content
-    third_party_settings: {  }
     label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
 hidden:
+  field_experience_points: true
+  field_followed_people: true
+  field_gold: true
+  field_level: true
+  field_primary_title: true
+  field_profile_achievements: true
+  field_profile_badges: true
+  field_rewards: true
+  field_secondary_title: true
   langcode: true
   member_for: true
+  user_picture: true

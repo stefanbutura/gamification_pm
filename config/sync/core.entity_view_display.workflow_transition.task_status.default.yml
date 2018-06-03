@@ -1,0 +1,43 @@
+uuid: 293020e2-2835-4da0-b222-26332fccfe20
+langcode: en
+status: true
+dependencies:
+  config:
+    - workflow.workflow.task_status
+  module:
+    - ds
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_content: {  }
+    regions:
+      ds_content:
+        - langcode
+id: workflow_transition.task_status.default
+targetEntityType: workflow_transition
+bundle: task_status
+mode: default
+content:
+  langcode:
+    type: language
+    weight: 0
+    region: ds_content
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,16 @@
+uuid: 1f00558b-95bc-4596-904c-a40356752965
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.notification
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.notification
+target_entity_type_id: node
+target_bundle: notification
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,10 @@
+uuid: c9b5ba4b-1985-40a1-9631-50b59d387198
+langcode: en
+status: true
+dependencies: {  }
+id: task_status_underwork
+label: 'Under work'
+module: workflow
+wid: task_status
+weight: -8
+sysid: 0

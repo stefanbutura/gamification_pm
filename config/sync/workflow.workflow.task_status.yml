@@ -1,0 +1,14 @@
+uuid: 48c65545-d6f2-4b15-8e66-a91fc5174abc
+langcode: en
+status: true
+dependencies: {  }
+id: task_status
+label: 'Task status'
+module: workflow
+options:
+  name_as_title: 0
+  fieldset: 0
+  options: buttons
+  schedule_timezone: 1
+  comment_log_node: 0
+  watchdog_log: 0

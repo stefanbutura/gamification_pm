@@ -1,0 +1,30 @@
+uuid: 5cf70113-5cc0-484a-94aa-3988dd1b52be
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.leaderboard_friends
+  module:
+    - system
+    - views
+  theme:
+    - licenta
+id: views_block__leaderboard_friends_block_1
+theme: licenta
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:leaderboard_friends-block_1'
+settings:
+  id: 'views_block:leaderboard_friends-block_1'
+  label: 'Friends leaderboard'
+  provider: views
+  label_display: visible
+  views_label: 'Friends leaderboard'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /leaderboards
+    negate: false
+    context_mapping: {  }

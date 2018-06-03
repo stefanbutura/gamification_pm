@@ -6,10 +6,11 @@ dependencies:
     - field.storage.node.field_assignee
     - field.storage.node.field_category
     - field.storage.node.field_priority
-    - field.storage.node.field_status
     - field.storage.node.field_task_number
+    - field.storage.node.field_workflow_status
     - search_api.index.search_index
   module:
+    - options
     - search_api
 id: task
 label: 'Task search'
@@ -380,10 +381,10 @@ display:
                 display_method: label
           entity_type: node
           plugin_id: search_api_field
-        field_status:
-          id: field_status
-          table: search_api_datasource_search_index_entity_node
-          field: field_status
+        field_workflow_status:
+          id: field_workflow_status
+          table: search_api_index_search_index
+          field: field_workflow_status
           relationship: none
           group_type: group
           admin_label: ''
@@ -420,7 +421,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -428,11 +429,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -443,24 +443,12 @@ display:
           separator: ', '
           field_api_classes: false
           field_rendering: true
-          fallback_handler: search_api_entity
+          fallback_handler: search_api
           fallback_options:
             link_to_item: false
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-            display_methods:
-              middle_titles:
-                display_method: label
-              primary_titles:
-                display_method: label
-              task_categories:
-                display_method: label
-              task_priorities:
-                display_method: label
-              task_statuses:
-                display_method: label
-          entity_type: node
           plugin_id: search_api_field
         title:
           id: title
@@ -722,8 +710,8 @@ display:
         - 'config:field.storage.node.field_assignee'
         - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_priority'
-        - 'config:field.storage.node.field_status'
         - 'config:field.storage.node.field_task_number'
+        - 'config:field.storage.node.field_workflow_status'
   page_1:
     display_plugin: page
     id: page_1
@@ -748,5 +736,5 @@ display:
         - 'config:field.storage.node.field_assignee'
         - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_priority'
-        - 'config:field.storage.node.field_status'
         - 'config:field.storage.node.field_task_number'
+        - 'config:field.storage.node.field_workflow_status'

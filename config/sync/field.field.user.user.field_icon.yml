@@ -6,7 +6,7 @@ dependencies:
     - field.storage.user.field_icon
     - node.type.icon
   content:
-    - 'node:icon:255da20e-9abe-4ffe-80a4-9733ed5b0edf'
+    - 'node:icon:2429f0fc-673c-49ac-8a9b-28dc1e4dc6b6'
   module:
     - user
 id: user.user.field_icon
@@ -19,7 +19,7 @@ required: true
 translatable: false
 default_value:
   -
-    target_uuid: 255da20e-9abe-4ffe-80a4-9733ed5b0edf
+    target_uuid: 2429f0fc-673c-49ac-8a9b-28dc1e4dc6b6
 default_value_callback: ''
 settings:
   handler: 'default:node'

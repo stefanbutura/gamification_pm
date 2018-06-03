@@ -1,0 +1,28 @@
+uuid: 0167bbe1-604b-4759-ae4e-39f5d0e128ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.duplicate_of_status
+  module:
+    - facets
+    - system
+  theme:
+    - licenta
+id: duplicateofstatus
+theme: licenta
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:duplicate_of_status'
+settings:
+  id: 'facet_block:duplicate_of_status'
+  label: Status
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/task-search"
+    negate: false
+    context_mapping: {  }

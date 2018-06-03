@@ -1,0 +1,22 @@
+uuid: ec2a5dbb-8f61-40c7-8267-4eba307ebae6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: task
+label: Task
+type: 'canonical_entities:node'
+pattern: '/task/[node:field_task_number]'
+selection_criteria:
+  3c150f6a-2969-403f-a53e-2098ae523d83:
+    id: node_type
+    bundles:
+      task: task
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 3c150f6a-2969-403f-a53e-2098ae523d83
+selection_logic: and
+weight: -5
+relationships: {  }

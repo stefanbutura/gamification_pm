@@ -1,0 +1,28 @@
+uuid: 05607007-f959-4fb6-9296-988004eb287d
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.assignee
+  module:
+    - facets
+    - system
+  theme:
+    - licenta
+id: assignee
+theme: licenta
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:assignee'
+settings:
+  id: 'facet_block:assignee'
+  label: Assignee
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /search
+    negate: false
+    context_mapping: {  }

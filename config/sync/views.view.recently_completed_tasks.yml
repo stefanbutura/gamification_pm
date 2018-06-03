@@ -4,13 +4,10 @@ status: true
 dependencies:
   config:
     - node.type.task
-    - taxonomy.vocabulary.task_statuses
-  content:
-    - 'taxonomy_term:task_statuses:3b1b27f7-0b7e-4cdb-91b0-34bb1884d3d7'
   module:
     - node
-    - taxonomy
     - user
+    - workflow
 id: recently_completed_tasks
 label: 'Recently completed tasks'
 module: views
@@ -145,16 +142,16 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        field_status_target_id:
-          id: field_status_target_id
-          table: node__field_status
-          field: field_status_target_id
+        field_workflow_status_value:
+          id: field_workflow_status_value
+          table: node__field_workflow_status
+          field: field_workflow_status_value
           relationship: none
           group_type: group
           admin_label: ''
           operator: or
           value:
-            - 7
+            task_status_approved: task_status_approved
           group: 1
           exposed: false
           expose:
@@ -183,12 +180,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: textfield
-          limit: true
-          vid: task_statuses
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
+          plugin_id: workflow_state
       sorts:
         created:
           id: created
@@ -253,7 +245,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -270,7 +261,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

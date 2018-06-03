@@ -14,10 +14,7 @@ dependencies:
     - field.field.user.user.field_rewards
     - field.field.user.user.field_secondary_title
     - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
-    - image
-    - path
     - user
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
@@ -27,114 +24,84 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
   contact:
-    weight: 5
+    weight: 2
     region: content
+    settings: {  }
+    third_party_settings: {  }
   field_experience_points:
-    weight: 9
+    weight: 4
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
-  field_followed_people:
-    weight: 17
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_gold:
-    weight: 11
+    weight: 6
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_icon:
-    weight: 32
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    weight: 11
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_level:
-    weight: 10
+    weight: 5
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_primary_title:
-    weight: 15
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    weight: 9
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_profile_achievements:
-    weight: 13
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    weight: 8
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_profile_badges:
-    weight: 12
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    weight: 7
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_rewards:
-    weight: 31
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
+    weight: 12
     region: content
-  field_secondary_title:
-    weight: 16
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+  field_secondary_title:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   language:
-    weight: 0
-    region: content
-  path:
-    type: path
-    weight: 30
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   timezone:
-    weight: 6
+    weight: 3
     region: content
-  user_picture:
-    type: image_image
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+    settings: {  }
     third_party_settings: {  }
-    weight: -1
-    region: content
 hidden:
+  field_followed_people: true
   langcode: true
+  path: true
+  user_picture: true

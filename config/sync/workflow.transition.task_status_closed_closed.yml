@@ -1,0 +1,10 @@
+uuid: a06e64c0-3820-498c-8755-2b377e6b83ee
+langcode: en
+status: true
+dependencies: {  }
+id: task_status_closed_closed
+label: null
+module: workflow
+from_sid: task_status_closed
+to_sid: task_status_closed
+roles: {  }

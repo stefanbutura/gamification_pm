@@ -1,0 +1,7 @@
+tips:
+  search-api-index-fields-label:
+    label: Etichetă
+  search-api-index-fields-machine-name:
+    label: 'Nume maşină'
+  search-api-index-fields-type:
+    label: Tip

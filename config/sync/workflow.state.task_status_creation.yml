@@ -1,0 +1,10 @@
+uuid: aeda3df0-4494-4d1f-a580-79383fae54ee
+langcode: en
+status: true
+dependencies: {  }
+id: task_status_creation
+label: New
+module: workflow
+wid: task_status
+weight: -11
+sysid: 1

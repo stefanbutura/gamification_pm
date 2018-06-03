@@ -34,7 +34,7 @@ class UserStatsBlock extends BlockBase {
     $tasks = \Drupal::entityQuery('node')
       ->condition('type', 'task')
       ->condition('status', 1)
-      ->condition('field_status', LicentaHelper::$STATUS_APPROVED)
+      ->condition('field_workflow_status', LicentaHelper::$STATUS_APPROVED)
       ->condition('field_assignee.entity.uid', $user->id())
       ->execute();
 

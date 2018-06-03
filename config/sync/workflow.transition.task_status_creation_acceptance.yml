@@ -1,0 +1,17 @@
+uuid: d92e0891-1fb9-47d5-b0e3-51aa3191a631
+langcode: en
+status: true
+dependencies: {  }
+id: task_status_creation_acceptance
+label: null
+module: workflow
+from_sid: task_status_creation
+to_sid: task_status_acceptance
+roles:
+  administrator: administrator
+  warrior: warrior
+  cleric: cleric
+  bard: bard
+  workflow_author: '0'
+  anonymous: '0'
+  authenticated: '0'

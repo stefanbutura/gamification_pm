@@ -1,0 +1,28 @@
+uuid: 794d0408-5917-41f9-aa4d-32894d2a68f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.status
+  module:
+    - facets
+    - system
+  theme:
+    - licenta
+id: status
+theme: licenta
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:status'
+settings:
+  id: 'facet_block:status'
+  label: Status
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /search
+    negate: false
+    context_mapping: {  }

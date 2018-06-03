@@ -15,13 +15,14 @@ dependencies:
     - field.field.node.task.field_priority
     - field.field.node.task.field_rewards
     - field.field.node.task.field_spent_time
-    - field.field.node.task.field_status
     - field.field.node.task.field_task_number
+    - field.field.node.task.field_workflow_status
     - node.type.task
   module:
     - comment
     - datetime
     - ds
+    - options
     - text
     - user
 third_party_settings:
@@ -51,7 +52,7 @@ third_party_settings:
       left:
         - field_assignee
         - field_category
-        - field_status
+        - field_workflow_status
         - field_priority
         - field_d
         - field_estimated_time
@@ -169,13 +170,12 @@ content:
     third_party_settings: {  }
     type: number_decimal
     region: left
-  field_status:
+  field_workflow_status:
     weight: 2
     label: inline
-    settings:
-      link: false
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_label
+    type: list_default
     region: left
 hidden:
   field_task_number: true

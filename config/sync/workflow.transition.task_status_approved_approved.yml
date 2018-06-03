@@ -1,0 +1,10 @@
+uuid: 7cb6e073-00f6-4ab8-8d99-afd21923df24
+langcode: en
+status: true
+dependencies: {  }
+id: task_status_approved_approved
+label: null
+module: workflow
+from_sid: task_status_approved
+to_sid: task_status_approved
+roles: {  }

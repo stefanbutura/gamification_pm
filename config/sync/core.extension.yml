@@ -3,6 +3,7 @@ module:
   big_pipe: 0
   block: 0
   block_content: 0
+  block_exclude_pages: 0
   breakpoint: 0
   ckeditor: 0
   color: 0
@@ -19,9 +20,12 @@ module:
   editor: 0
   facets: 0
   field: 0
+  field_permissions: 0
   field_ui: 0
   file: 0
   filter: 0
+  flag: 0
+  fontawesome: 0
   help: 0
   history: 0
   image: 0
@@ -30,6 +34,7 @@ module:
   licenta_base: 0
   link: 0
   locale: 0
+  menu_token: 0
   menu_ui: 0
   node: 0
   options: 0
@@ -50,6 +55,11 @@ module:
   twig_tweak: 0
   user: 0
   views_ui: 0
+  workflow: 0
+  workflow_access: 0
+  workflow_ui: 0
+  workflows: 0
+  contribute: 1
   ds: 1
   menu_link_content: 1
   pathauto: 1

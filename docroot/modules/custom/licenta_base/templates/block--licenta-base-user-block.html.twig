@@ -1,14 +1,17 @@
-{% set imagestyle = {
-    '#theme':      'image_style',
-    '#style_name': 'thumbnail',
-    '#uri':        picture.entity.uri.value,
-    '#alt':        picture.alt,
-    '#attributes': { class: 'pull-left user-title-image' },
-} %}
+{% if picture %}
+    {% set imagestyle = {
+        '#theme':      'image_style',
+        '#style_name': 'thumbnail',
+        '#uri':        picture.entity.uri.value,
+        '#alt':        picture.alt,
+        '#attributes': { class: 'pull-left user-title-image' },
+    } %}
 
-{{ imagestyle }}
+    {{ imagestyle }}
+{% endif %}
 
 {% if title %}
     <h1{{ title_attributes.addClass('title') }}>{{ title }}</h1>
-    <h2 class="subtitle">{{ role }}</h2>
+    <h2 class="subtitle user-subtitle">{{ role }}</h2>
+    <div class="subtitle follow-button">{{ flag_link }}</div>
 {% endif %}

@@ -1,0 +1,28 @@
+uuid: 351bae45-a78f-407c-8704-00b5fcea195e
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.duplicate_of_assignee
+  module:
+    - facets
+    - system
+  theme:
+    - licenta
+id: duplicateofassignee
+theme: licenta
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:duplicate_of_assignee'
+settings:
+  id: 'facet_block:duplicate_of_assignee'
+  label: Assignee
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/task-search"
+    negate: false
+    context_mapping: {  }

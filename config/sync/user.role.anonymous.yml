@@ -12,5 +12,6 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'create task_status workflow_transition'
   - 'search content'
   - 'use text format restricted_html'

@@ -9,6 +9,8 @@ dependencies:
     - node.type.icon
     - node.type.primary_title
     - node.type.secondary_title
+  content:
+    - 'node:icon:2429f0fc-673c-49ac-8a9b-28dc1e4dc6b6'
   module:
     - user
 id: user.user.field_rewards
@@ -19,7 +21,9 @@ label: Rewards
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 2429f0fc-673c-49ac-8a9b-28dc1e4dc6b6
 default_value_callback: ''
 settings:
   handler: 'default:node'

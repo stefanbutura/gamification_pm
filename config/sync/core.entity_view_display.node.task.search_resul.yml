@@ -15,7 +15,8 @@ dependencies:
     - field.field.node.task.field_priority
     - field.field.node.task.field_rewards
     - field.field.node.task.field_spent_time
-    - field.field.node.task.field_status
+    - field.field.node.task.field_task_number
+    - field.field.node.task.field_workflow_status
     - node.type.task
   module:
     - ds
@@ -41,10 +42,6 @@ third_party_settings:
         weight: 0
         label: hidden
         formatter: default
-        settings:
-          link: true
-          wrapper: h2
-          class: ''
 id: node.task.search_resul
 targetEntityType: node
 bundle: task
@@ -83,6 +80,7 @@ hidden:
   field_priority: true
   field_rewards: true
   field_spent_time: true
-  field_status: true
+  field_task_number: true
+  field_workflow_status: true
   langcode: true
   links: true

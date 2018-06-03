@@ -1,0 +1,10 @@
+uuid: 19fb8e11-22c5-45f8-8455-2a137f214fe5
+langcode: en
+status: true
+dependencies: {  }
+id: task_status_closed
+label: Closed
+module: workflow
+wid: task_status
+weight: -5
+sysid: 0

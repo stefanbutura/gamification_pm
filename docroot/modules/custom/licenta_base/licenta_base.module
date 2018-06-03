@@ -5,6 +5,8 @@ use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\licenta_base\LicentaHelper;
 use Drupal\user\Entity\User;
+use Drupal\flag\FlagInterface;
+use Drupal\flag\Entity\Flag;
 
 function licenta_base_node_presave(Node $node) {
   if ($node->bundle() == 'task') {
@@ -22,8 +24,9 @@ function licenta_base_node_presave(Node $node) {
     }
 
     $old_node = Node::load($node->id());
-    if ($old_node->field_status->target_id != LicentaHelper::$STATUS_APPROVED
-      && $node->field_status->target_id == LicentaHelper::$STATUS_APPROVED) {
+    dpm($old_node->field_workflow_status->value);
+    if ($old_node->field_workflow_status->value != LicentaHelper::$STATUS_APPROVED
+      && $node->field_workflow_status->value == LicentaHelper::$STATUS_APPROVED) {
       /** @var \Drupal\user\Entity\User $user */
       $user = $node->field_assignee->entity;
 
@@ -36,7 +39,22 @@ function licenta_base_node_presave(Node $node) {
       $user->field_level->value = LicentaHelper::getLevelFromXp($user->field_experience_points->value);
       $user->field_gold->value += $node->field_gold->value;
       $user->save();
+
+      $notification_message = t('Congratiulations, a <a href=/task/@task>task</a> has been marked as completed!', [
+        '@task' => $node->field_task_number->value,
+      ]);
     }
+    else {
+      $notification_message = t('Congratiulations, a <a href=/task/@task_id>task</a> has been marked as completed!', ['@task_id' => $node->field_task_number->value]);
+    }
+
+    Node::create([
+      'type' => 'notification',
+      'body' => ['value' => $notification_message, 'format' => 'full_html'],
+      'title' => $notification_message,
+      'field_assignee' => ['target_id' => $node->field_assignee->target_id],
+    ])->save();
+
   }
 
   if ($node->bundle() == 'spent_time') {
@@ -54,7 +72,7 @@ function licenta_base_node_presave(Node $node) {
 function licenta_base_theme($existing, $type, $theme, $path) {
   return array(
     'licenta_base_user_title_block' => array(
-      'variables' => array('title' => NULL, 'picture' => NULL, 'role' => NULL),
+      'variables' => array('title' => NULL, 'picture' => NULL, 'role' => NULL, 'flag_link' => NULL),
       'template' => 'block--licenta-base-user-block',
     ),
     'licenta_base_user_stats_block' => array(
@@ -65,6 +83,41 @@ function licenta_base_theme($existing, $type, $theme, $path) {
 }
 
 function licenta_base_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['node_task_edit_form'])) {
+    $form['revision_information']['#access'] = false;
+  }
+
+  if ($form_id == 'user_form') {
+    $user = \Drupal::routeMatch()->getParameter('user');
+    $user_rewards = $user->field_rewards->getValue();
+    $fields = [
+      'field_primary_title',
+      'field_secondary_title',
+      'field_icon',
+      'field_profile_badges',
+      'field_profile_achievements',
+    ];
+    foreach ($fields as $field) {
+      $options = array_keys($form[$field]['widget']['#options']);
+      foreach ($options as $option) {
+        if ($option == '_none') {
+          continue;
+        }
+        $has_reward = FALSE;
+        foreach ($user_rewards as $user_reward) {
+          if ($user_reward['target_id'] == $option) {
+            $has_reward = TRUE;
+            break;
+          }
+        }
+        if ($has_reward == FALSE) {
+          unset($form[$field]['widget']['#options'][$option]);
+        }
+      }
+
+    }
+  }
+
   if ($form['#id'] == 'views-exposed-form-search-page-1') {
     $form['actions']['submit']['#value'] = '';
   }
@@ -80,4 +133,20 @@ function licenta_base_views_pre_render(\Drupal\views\ViewExecutable $view) {
     }
   }
 }
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function licenta_base_flagging_insert(\Drupal\flag\FlaggingInterface $flagging) {
+  $followed = $flagging->entity_id->value;
+  $follower = $flagging->uid->target_id;
+
+  Node::create([
+    'type' => 'notification',
+    'body' => ['value' => t('User <a href="/user/@user">@user_name</a> has followed you.', ['@user' => $follower, '@user_name' => User::load($follower)->getAccountName()]), 'format' => 'full_html'],
+    'title' => t('User <a href="/user/@user">@user_name</a> has followed you.', ['@user' => $follower, '@user_name' => User::load($follower)->getAccountName()]),
+    'field_assignee' => ['target_id' => $followed],
+  ])->save();
+}
+
 
