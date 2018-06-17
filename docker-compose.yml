@@ -27,7 +27,7 @@ services:
   nginx:
     container_name: licenta_proxy
     ports:
-      - "80:80"
+      - "8080:8080"
     image: nginx:latest
     depends_on:
       - php71
