@@ -24,7 +24,6 @@ function licenta_base_node_presave(Node $node) {
     }
 
     $old_node = Node::load($node->id());
-    dpm($old_node->field_workflow_status->value);
     if ($old_node->field_workflow_status->value != LicentaHelper::$STATUS_APPROVED
       && $node->field_workflow_status->value == LicentaHelper::$STATUS_APPROVED) {
       /** @var \Drupal\user\Entity\User $user */
@@ -45,7 +44,7 @@ function licenta_base_node_presave(Node $node) {
       ]);
     }
     else {
-      $notification_message = t('Congratiulations, a <a href=/task/@task_id>task</a> has been marked as completed!', ['@task_id' => $node->field_task_number->value]);
+      $notification_message = t('A new <a href=/task/@task_id>task</a> has been assigned to you.', ['@task_id' => $node->field_task_number->value]);
     }
 
     Node::create([

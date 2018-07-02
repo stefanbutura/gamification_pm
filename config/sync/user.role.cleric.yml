@@ -115,6 +115,7 @@ permissions:
   - 'view field_priority'
   - 'view field_profile_achievements'
   - 'view field_profile_badges'
+  - 'view field_rewards'
   - 'view field_secondary_title'
   - 'view field_spent_time'
   - 'view field_task_number'

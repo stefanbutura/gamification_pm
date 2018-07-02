@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_rewards
     - node.type.achievement
     - node.type.badge
+    - node.type.icon
     - node.type.primary_title
     - node.type.secondary_title
     - node.type.task
@@ -25,6 +26,7 @@ settings:
     target_bundles:
       achievement: achievement
       badge: badge
+      icon: icon
       primary_title: primary_title
       secondary_title: secondary_title
     sort:

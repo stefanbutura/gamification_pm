@@ -5,6 +5,7 @@ namespace Drupal\licenta_base\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Block\TitleBlockPluginInterface;
 use Drupal\licenta_base\LicentaHelper;
+use Drupal\node\Entity\Node;
 use Drupal\user\Entity\Role;
 use Drupal\user\Entity\User;
 use Drupal\user\UserInterface;
@@ -46,7 +47,8 @@ class UserStatsBlock extends BlockBase {
       ->condition('field_assignee.entity.uid', $user->id())
       ->execute();
 
-    foreach ($spent_time as $node) {
+    foreach ($spent_time as $nid) {
+      $node = Node::load($nid);
       $total_time += $node->field_spent_time->value;
     }
 

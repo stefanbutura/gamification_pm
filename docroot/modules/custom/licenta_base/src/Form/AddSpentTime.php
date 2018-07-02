@@ -4,8 +4,10 @@ namespace Drupal\licenta_base\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class AddSpentTime extends FormBase {
   /**
@@ -61,10 +63,18 @@ class AddSpentTime extends FormBase {
     $ts_node = Node::create([
       'type' => 'spent_time',
       'title' => \Drupal::currentUser()->getDisplayName() . date('Y-m-d'),
+      'field_spent_time' => $form_state->getValue('spent_time'),
       'field_assignee' => ['target_id' => $user_id],
       'field_task' => ['target_id' => $task_id],
-    ])->save();
+    ]);
+    $ts_node->save();
+
+//    $task = Node::load($task_id);
+//    $task->field_spent_time->value += $form_state->getValue('spent_time');
+//    $task->save();
 
     drupal_set_message('Successfully added spent time');
+    $url = Url::fromRoute('entity.node.canonical', ['node' => $task_id]);
+    $form_state->setRedirectUrl($url);
   }
 }

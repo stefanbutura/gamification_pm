@@ -107,7 +107,7 @@ content:
     label: inline
     settings:
       timezone_override: ''
-      date_format: 'Y-m-d\TH:i:s'
+      date_format: 'Y-m-d H:i:s'
     third_party_settings: {  }
     type: datetime_custom
     region: left
